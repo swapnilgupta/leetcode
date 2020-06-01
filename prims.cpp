@@ -32,18 +32,16 @@ class Graph {
         pq.push(make_pair(0,src));
         while(!pq.empty()) {
             int u = pq.top().second;
-            int p = pq.top().first;
             pq.pop();
             inMST[u] = true;
             //for each adjacent of the u fo the checking
-            list<pare> ::iterator it;
-            for(it=adj[u].begin();it!=adj[u].end();++it) {
-                int v = (*it).first;
-                int weight=(*it).second;
+            for(auto& e : adj[u]) {
+                int v = e.first;
+                int weight= e.second;
                 if (inMST[v] == false && cost[v] > weight) {
                     // Updating key of v
                     cost[v] = weight;
-                    pq.push(make_pair(cost[v], v));
+                    pq.push({cost[v], v});
                     parent[v] = u;
                 }
             }
