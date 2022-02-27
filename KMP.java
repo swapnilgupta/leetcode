@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=BXCEFAzhxGY&ab_channel=BackToBackSWE
+// https://www.youtube.com/watch?v=V5-7GzOfADQ&ab_channel=AbdulBari
 public class KMP {
     private String text;
     private String pattern;
