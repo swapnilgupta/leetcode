@@ -14,8 +14,8 @@ public class KMP {
         System.out.print("LPS: ");
         while (j < n) {
             if (pattern.charAt(i) == pattern.charAt(j)) {
+                lps[j] = i + 1;
                 i++;
-                lps[j] = i;
                 j++;
             } else {
                 if(i != 0) {
