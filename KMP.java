@@ -51,7 +51,7 @@ public class KMP {
                 if (j != 0)
                     j = lps[j - 1];
                 else
-                    i = i + 1;
+                    i = i + 1; // pattern cannot match at i, advance i -> i + 1
             }
         }
         return index;
