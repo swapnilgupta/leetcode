@@ -11,16 +11,23 @@ public class KMP {
         if (n < 2)
             return;
         int i = 0, j = 1;
-        System.out.println("LPS: ");
-        System.out.print(lps[0] + " ");
+        System.out.print("LPS: ");
         while (j < n) {
             if (pattern.charAt(i) == pattern.charAt(j)) {
-                lps[j] = i + 1;
                 i++;
+                lps[j] = i;
+                j++;
+            } else {
+                if(i != 0) {
+                    i = lps[i - 1];
+                } else {
+                    lps[j] = i;
+                    j++;
+                }
             }
-            System.out.print(lps[j] + " ");
-            j++;
         }
+        for(int p : lps)
+            System.out.print(p + " , ");
         System.out.println();
     }
 
@@ -60,7 +67,7 @@ public class KMP {
     public static void main(String[] args) {
         KMP kmp = new KMP();
         String text = "adsgwadsxdsgwadsgz";
-        String pattern = "dsgwadsgz";
+        String pattern = "cacacaabc";
         int index = kmp.findStr(text, pattern);
         System.out.println("Last occurrence found at: " + index);
     }
