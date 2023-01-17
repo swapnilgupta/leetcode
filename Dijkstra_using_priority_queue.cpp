@@ -1,4 +1,5 @@
-// Dijstra's implementation
+// Dijkstra's Shortest Path Algorithm by using min_priority_queue implementation
+// Time Complexity: O((|E| + |V|).lg |V|)
 #include <bits/stdc++.h>
 using namespace std;
 class Graph
