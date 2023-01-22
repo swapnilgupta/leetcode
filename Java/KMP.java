@@ -18,7 +18,7 @@ public class KMP {
                 i++;
                 j++;
             } else {
-                if(i != 0) {
+                if (i != 0) {
                     i = lps[i - 1];
                 } else {
                     lps[j] = i;
@@ -26,7 +26,7 @@ public class KMP {
                 }
             }
         }
-        for(int p : lps)
+        for (int p : lps)
             System.out.print(p + " , ");
         System.out.println();
     }

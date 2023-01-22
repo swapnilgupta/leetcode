@@ -3,7 +3,7 @@
 #include <math.h>
 using namespace std;
 void merge(int ar1[], int ar2[], int n, int m) {
-  // code here 
+  // code here
   int gap = ceil((float)(n + m) / 2);
   while (gap > 0) {
     int i = 0;
@@ -22,13 +22,13 @@ void merge(int ar1[], int ar2[], int n, int m) {
     if (gap == 1) {
       gap = 0;
     } else {
-      gap = ceil((float) gap / 2);
+      gap = ceil((float)gap / 2);
     }
   }
 }
 int main() {
-  int arr1[] = {1,4,7,8,10};
-  int arr2[] = {2,3,9};
+  int arr1[] = {1, 4, 7, 8, 10};
+  int arr2[] = {2, 3, 9};
   cout << "Before merge:" << endl;
   for (int i = 0; i < 5; i++) {
     cout << arr1[i] << " ";
@@ -47,5 +47,4 @@ int main() {
   for (int i = 0; i < 3; i++) {
     cout << arr2[i] << " ";
   }
-
 }

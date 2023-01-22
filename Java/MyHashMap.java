@@ -15,10 +15,9 @@ class MyHashMap {
         int index = getIndex(key);
         ListNode prev = findElement(index, key);
 
-        if(prev.next == null) {
+        if (prev.next == null) {
             prev.next = new ListNode(key, value);
-        }
-        else {
+        } else {
             prev.next.value = value;
         }
     }
@@ -27,7 +26,8 @@ class MyHashMap {
     public void remove(int key) {
         int index = getIndex(key);
         ListNode prev = findElement(index, key);
-        if(prev.next == null) return;
+        if (prev.next == null)
+            return;
         prev.next = prev.next.next;
         // Non - referenced elements will be garbage collected
     }
@@ -37,27 +37,24 @@ class MyHashMap {
     }
 
     private ListNode findElement(int index, int key) {
-        if(nodes[index] == null) {
+        if (nodes[index] == null) {
             return nodes[index] = new ListNode(-1, -1);
         }
 
         ListNode prev = nodes[index];
-        while(prev.next != null && prev.next.key != key) {
+        while (prev.next != null && prev.next.key != key) {
             prev = prev.next;
         }
         return prev;
     }
 
-
     private static class ListNode {
         int key, value;
         ListNode next;
-        
+
         ListNode(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
 }
-
-
