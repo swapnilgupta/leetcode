@@ -12,6 +12,8 @@ class PriorityQueueDemo {
         pQueue.add(20);
         pQueue.add(15);
 
+        pQueue.remove();
+        pQueue.add(1);
         // Printing the top element of PriorityQueue
         System.out.println(pQueue.peek());
 
