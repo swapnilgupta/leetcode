@@ -1,3 +1,8 @@
 .DS_Store
 a.out
 *.class
+*.iml
+.idea/
+*.xml
+
+Java/.idea/compiler.xml
