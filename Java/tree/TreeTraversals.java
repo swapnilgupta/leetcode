@@ -18,8 +18,7 @@ class BinaryTree {
     BinaryTree() {
         root = null;
     }
-
-    /* Given a binary tree, print its nodes in inorder fashion */
+    /* Given a binary tree, print its nodes in inorder */
     void printInorder(Node node) {
         if(node == null) return ;
 
@@ -92,6 +91,8 @@ class BinaryTree {
             }
         }
     }
+
+    boolean isSymmetric(TreeNode left,)
 }
 public class TreeTraversals {
     public static void main(String[] args) {
