@@ -4,5 +4,6 @@ a.out
 *.iml
 .idea/
 *.xml
+.vscode/
 
 Java/.idea/compiler.xml
