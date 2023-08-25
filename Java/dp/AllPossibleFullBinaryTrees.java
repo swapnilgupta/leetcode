@@ -24,5 +24,9 @@ public class AllPossibleFullBinaryTrees {
 
             createPossibleFBT();
         }
+        return root;
+    }
+
+    private void createPossibleFBT() {
     }
 }

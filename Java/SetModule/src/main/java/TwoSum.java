@@ -95,7 +95,7 @@ class BestTeamScore {
 }
 
 
-class Main {
+class Main1 {
     class Interval {
         int start, end;
 

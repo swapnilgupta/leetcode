@@ -92,7 +92,6 @@ class BinaryTree {
         }
     }
 
-    boolean isSymmetric(TreeNode left,)
 }
 public class TreeTraversals {
     public static void main(String[] args) {
