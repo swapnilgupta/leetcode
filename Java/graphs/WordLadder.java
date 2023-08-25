@@ -1,10 +1,8 @@
 package graphs;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class WordLadder {
@@ -29,6 +27,7 @@ public class WordLadder {
 		for (String word : wordList) {
 			if (word.equals(endWord)) {
 				present = true;
+				break;
 			}
 		}
 		if (!present) {
@@ -79,18 +78,24 @@ public class WordLadder {
 		int steps = 1;
 		while (!q.isEmpty()) {
 			int sz = q.size();
-			for(int i = 0; i < sz; ++i) {
-				int curr = q.poll();
-				if (endWord.equals(wordList.get(curr))) {
-					return steps;
-				}
-				ArrayList<Integer> neighbors = adjList.get(curr);
-				for(int v : neighbors) {
-					if(!visited[v]) {
-						q.add(v);
-						visited[v] = true;
+			for (int i = 0; i < sz; ++i) {
+				try {
+					Integer temp = q.poll();
+					int curr = temp == null ? -1 : temp;
+					if (endWord.equals(wordList.get(curr))) {
+						return steps;
 					}
+					ArrayList<Integer> neighbors = adjList.get(curr);
+					for (int v : neighbors) {
+						if (!visited[v]) {
+							q.add(v);
+							visited[v] = true;
+						}
+					}
+				} catch (NullPointerException e) {
+					System.out.println("Failed to poll: " + e);
 				}
+
 			}
 			++steps;
 		}
@@ -98,13 +103,11 @@ public class WordLadder {
 	}
 
 	// write a driver code for above word ladder
-	// ["hot","dot","dog","lot","log","cog"] = wrodlist
+	// ["hot","dot","dog","lot","log","cog"] = wordList
 	// beginWord = "hit"
 	// endWord = "cog"
 	// driver code ["a","b","c"]
 	public static void main(String[] args) {
-//		String beginWord = "a";
-//		String endWord = "c";
 		String beginWord = "hit";
 		String endWord = "cog";
 		List<String> wordList = new ArrayList<>();
@@ -114,9 +117,6 @@ public class WordLadder {
 		wordList.add("lot");
 		wordList.add("log");
 		wordList.add("cog");
-//		wordList.add("a");
-//		wordList.add("b");
-//		wordList.add("c");
 
 		int ans = ladderLength(beginWord, endWord, wordList);
 		System.out.println(ans);
