@@ -39,6 +39,11 @@ public class SummaryRanges {
             }
         }
         intervals.add(new int[] {left, right});
+        // The new int[0][] passed to toArray() is to tell the compiler that the type of
+        // the array is int[][] and number 0 is given when we don't know the size of the
+        // array would have been.
+        // But we do know its type int[][], and we know its size intervals.size()
+        // So intervals is converted to int[][] and returned
         return intervals.toArray(new int[0][]);
     }
 

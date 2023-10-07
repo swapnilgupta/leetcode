@@ -2,37 +2,63 @@ package arrays;
 
 public class GasStation {
 
-    public int canCompleteCircuit(int[] gas, int[] cost) {
-        // if starting from 'a' you are stuck at 'b' then you cannot pass through from
-        int n = gas.length, i = 0;
-        while(i < n) {
-            int j = i;
-            int g = gas[j];
-            ++i;
-            int start = j;
-            while(j < n && g >= cost[j]) {
-                g -= cost[j];
-                if(g < 0) {
-                    i = j + 1;
-                    break;
-                }
-                j = (j + 1) % n;
-                if(start == j) {
-                    return start;
-                }
-                g += gas[j];
+//    static int getCircuitCity(int n, int[] gas, int[] cost) {
+//        // Code goes here —
+//        int currRemaining = 0;
+//        int totalRemaining = 0;
+//        int start = 0;
+//        for (int i = 0; i < n; i++) {
+//            int remaining = gas[i] - cost[i];
+//            if (currRemaining < 0) {
+//                start = i;
+//                currRemaining = remaining;
+//            } else {
+//                currRemaining += remaining;
+//            }
+//            totalRemaining += remaining;
+//        }
+//        if (totalRemaining < 0) {
+//            return -1;
+//        } else {
+//            return start;
+//        }
+//    }
+
+    static int getCircuitCity(int n, int[] gas, int[] cost) {
+        // Code goes here —
+        int currRemaining = 0;
+        int totalRemaining = 0;
+        int start = 0;
+        for (int i = 0; i < n; i++) {
+            int remaining = gas[i] - cost[i];
+            if (currRemaining < 0) {
+                start = i;
+                currRemaining = remaining;
+            } else {
+                currRemaining += remaining;
             }
+            totalRemaining += remaining;
         }
-        return -1;
+        if (totalRemaining < 0) {
+            return -1;
+        } else {
+            return start;
+        }
     }
 
-    // driver code for above
+
     public static void main(String[] args) {
-        GasStation obj = new GasStation();
-        int[] gas = {2,3,4};
-        int[] cost = {3,4,3};
-        int ans = obj.canCompleteCircuit(gas, cost);
-        System.out.println(ans);
-    }
+        int n = 5;
+        int[] gas = {2, 3, 4, 5, 1};
+        int[] cost = {4, 5, 1, 2, 3};
 
+        // edge case where total gas is less than total cost
+        // n = 5;
+        // gas = new int[]{2, 3, 4, 5, 1};
+        // cost = new int[]{9, 5, 1, 2, 3};
+        int cityIndex = getCircuitCity(n, gas, cost);
+        System.out.println(cityIndex);
+    }
 }
+
+// driver code for ab
