@@ -1,7 +1,7 @@
 package unionfind;
 
 class UnionFind {
-    private int[] parent;
+    private final int[] parent;
 
     public UnionFind(int n) {
         parent = new int[n];
