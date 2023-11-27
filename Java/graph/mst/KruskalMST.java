@@ -35,27 +35,27 @@ public class KruskalMST {
     }
 
     // Define find function - with the path compression algorithm
-    public static int find(Subset[] subsets, int i) {
-        if (subsets[i].parent != i) {
-            subsets[i].parent = find(subsets, subsets[i].parent);
+    public static int find(Subset[] subsets, int u) {
+        if (subsets[u].parent != u) {
+            subsets[u].parent = find(subsets, subsets[u].parent);
         }
 
-        return subsets[i].parent;
+        return subsets[u].parent;
     }
 
     // Define union function
-    public static void union(Subset[] subsets, int x, int y) {
-        int rootX = find(subsets, x);
-        int rootY = find(subsets, y);
+    public static void union(Subset[] subsets, int u, int v) {
+        int pu = find(subsets, u);
+        int pv = find(subsets, v);
 
         // higher rank sets as parent
-        if (subsets[rootX].rank > subsets[rootY].rank) {
-            subsets[rootY].parent = rootX;
-        } else if (subsets[rootX].rank < subsets[rootY].rank) {
-            subsets[rootX].parent = rootY;
+        if (subsets[pu].rank > subsets[pv].rank) {
+            subsets[pv].parent = pu;
+        } else if (subsets[pu].rank < subsets[pv].rank) {
+            subsets[pu].parent = pv;
         } else {
-            subsets[rootY].parent = rootX;
-            subsets[rootX].rank++;
+            subsets[pv].parent = pu;
+            subsets[pu].rank++;
         }
     }
 
