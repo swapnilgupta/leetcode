@@ -1,5 +1,6 @@
 package math;
-import java.util.*;
+
+import java.util.HashMap;
 
 public class MaxPointsOnLine {
 

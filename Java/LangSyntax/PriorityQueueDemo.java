@@ -1,6 +1,6 @@
 package LangSyntax;
 
-import java.util.*;
+import java.util.PriorityQueue;
 
 class PriorityQueueDemo {
 

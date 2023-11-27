@@ -1,9 +1,8 @@
 package dp;
 
-import tree.nodeTypes.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
+import tree.nodeTypes.TreeNode;
 
 public class AllPossibleFullBinaryTrees {
     public List<TreeNode> allPossibleFBT(int n) {

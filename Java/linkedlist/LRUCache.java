@@ -1,5 +1,7 @@
 package linkedlist;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /*
   Your LRUCache object will be instantiated and called as such: LRUCache obj = new

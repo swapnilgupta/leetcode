@@ -1,8 +1,5 @@
 package greedy;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class KillMonsters {
 
     // Java code

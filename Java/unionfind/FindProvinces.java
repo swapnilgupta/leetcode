@@ -1,6 +1,7 @@
 package unionfind;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 public class FindProvinces {
         class UnionFind {
             public int[] parent;

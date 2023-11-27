@@ -1,5 +1,3 @@
-import java.util.*;
-
 // MergeTwoSortedArray in O(1) space.
 public class MergeTwoSortedArray {
 

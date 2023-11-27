@@ -1,4 +1,6 @@
-import java.util.*;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class LinkedHashSetExample {
     public static void main(String[] args){

@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.EnumSet;
+import java.util.Set;
 
 enum Exam {CODE, LEARN, CONTRIBUTE, QUIZ, MCQ}
 public class EnumSetExample {
