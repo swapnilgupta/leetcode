@@ -42,6 +42,8 @@ public class DijkstraShortestPath {
 
     public static int[] dijkstra(Graph graph, int src) {
         int[] distance = new int[graph.V];
+        // just optimization without visited Dijkstra will still work
+        boolean[] visited = new boolean[graph.V];
         for (int i = 0; i < graph.V; ++i) {
             distance[i] = Integer.MAX_VALUE;
         }
@@ -52,8 +54,13 @@ public class DijkstraShortestPath {
 
         while (!pq.isEmpty()) {
             AdjListNode current = pq.poll();
+            if (visited[current.v]) {
+                continue;
+            }
+            visited[current.v] = true;
             for (AdjListNode adjNode : graph.adj.get(current.v)) {
-                if (distance[current.v] + adjNode.weight < distance[adjNode.v]) { // RELAX
+                // RELAXATION
+                if (!visited[adjNode.v] && distance[current.v] + adjNode.weight < distance[adjNode.v]) {
                     distance[adjNode.v] = distance[current.v] + adjNode.weight;
                     pq.add(new AdjListNode(adjNode.v, distance[adjNode.v]));
                 }

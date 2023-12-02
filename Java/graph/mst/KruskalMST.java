@@ -105,7 +105,6 @@ public class KruskalMST {
     }
 
     // Starting point of program execution
-
     public static void main(String[] args) {
         int V = 4;
         List<Edge> graphEdges = new ArrayList<>(
