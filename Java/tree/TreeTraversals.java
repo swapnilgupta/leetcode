@@ -37,13 +37,13 @@ class BinaryTree {
         printInorder(root);
     }
 
-    /* Given a binary tree, print its nodes in post order */
+    /* Given a binary tree, print its nodes in post-order */
     void printPostorder(Node node) {
         if(node == null) return;
 
-        // recur for left
+        // recur for a left
         printPostorder(node.left);
-        // recur for right
+        // recur for a right
         printPostorder(node.right);
 
         // print the root
@@ -72,9 +72,10 @@ class BinaryTree {
 
     /*
     Given a binary tree. Print its nodes in level order
-    using array for implementing queue
+    using an array for implementing queue
     */
     void printLevelOrder() {
+        if(root == null) return;
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
 
