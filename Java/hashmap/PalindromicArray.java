@@ -3,7 +3,7 @@ package hashmap;
 import java.util.*;
 
 public class PalindromicArray {
-
+    private static final Map<List<String>, Boolean> memo = new HashMap<>();
     public static boolean isPalindrome(String[] arr) {
         return isPalindrome(Arrays.asList(arr));
     }
@@ -11,6 +11,10 @@ public class PalindromicArray {
     public static boolean isPalindrome(List<String> words) {
         if (words.isEmpty() || words.size() == 1) {
             return true;
+        }
+        if (memo.containsKey(words)) {
+            System.out.println("memo hit");
+            return memo.get(words);
         }
         if (words.size() == 2) {
             return words.get(0).equals(words.get(1)) ||
@@ -92,6 +96,7 @@ public class PalindromicArray {
             result = result || isPalindrome(filtered);
         }
 
+        memo.put(words, result);
         return result;
     }
 
