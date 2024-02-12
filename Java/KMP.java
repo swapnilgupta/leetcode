@@ -1,18 +1,19 @@
 // https://www.youtube.com/watch?v=BXCEFAzhxGY&ab_channel=BackToBackSWE
 // https://www.youtube.com/watch?v=V5-7GzOfADQ&ab_channel=AbdulBari
+// https://leetcode.com/problems/number-of-subarrays-that-match-a-pattern-ii/
 public class KMP {
     private String text;
     private String pattern;
     private int[] lps;
 
     private void createLPSTable(String pattern) {
-        int n = pattern.length();
-        lps = new int[n];
-        if (n < 2)
+        int m = pattern.length();
+        lps = new int[m];
+        if (m < 2)
             return;
         int i = 0, j = 1;
         System.out.print("LPS: ");
-        while (j < n) {
+        while (j < m) {
             if (pattern.charAt(i) == pattern.charAt(j)) {
                 lps[j] = i + 1;
                 i++;
@@ -50,7 +51,7 @@ public class KMP {
             if (j == M) {
                 System.out.println("Found pattern " + "at index " + (i - j));
                 index = i - j;
-                j = lps[j - 1]; // look for next match
+                j = lps[j - 1]; // look for the next match
             }
 
             // mismatch after j matches then lps[j - 1] knows where to start now
