@@ -1,13 +1,14 @@
 package hashmap;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class UniqueEmails {
 	public int numUniqueEmails(String[] emails) {
 		// Hash Set to store all the unique emails
 		Set<String> uniqueEmails = new HashSet<>();
 
-		for(String email : emails) {
+		for (String email : emails) {
 			// split into two parts
 			String[] parts = email.split("@");
 
@@ -35,7 +36,7 @@ public class UniqueEmails {
 	public static void main(String[] args) {
 		UniqueEmails ue = new UniqueEmails();
 		String[] emails = {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com",
-			"testemail+david@lee.tcode.com" };
+				"testemail+david@lee.tcode.com"};
 
 		System.out.println(ue.numUniqueEmails(emails));
 	}

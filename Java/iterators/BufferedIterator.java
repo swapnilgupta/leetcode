@@ -14,48 +14,48 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 public class BufferedIterator<T> implements Iterator<T> {
 
-    private final Iterator<T> inputIterator;
-    private final BlockingQueue<T> buffer;
+	private final Iterator<T> inputIterator;
+	private final BlockingQueue<T> buffer;
 
-    public BufferedIterator(Iterator<T> inputIterator) {
-        this.inputIterator = inputIterator;
-        this.buffer = new LinkedBlockingQueue<>();
-    }
+	public BufferedIterator(Iterator<T> inputIterator) {
+		this.inputIterator = inputIterator;
+		this.buffer = new LinkedBlockingQueue<>();
+	}
 
-    @Override
-    public boolean hasNext() {
-        if (!buffer.isEmpty()) {
-            return true; // Buffer has data, so hasNext is true
-        }
+	@Override
+	public boolean hasNext() {
+		if (!buffer.isEmpty()) {
+			return true; // Buffer has data, so hasNext is true
+		}
 
-        // Asynchronously fetch data from the input iterator and fill the buffer
-        new Thread(() -> {
-            while (inputIterator.hasNext()) {
-                try {
-                    buffer.put(inputIterator.next());
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    throw new RuntimeException("Error while buffering data", e);
-                }
-            }
-        }).start();
+		// Asynchronously fetch data from the input iterator and fill the buffer
+		new Thread(() -> {
+			while (inputIterator.hasNext()) {
+				try {
+					buffer.put(inputIterator.next());
+				} catch (InterruptedException e) {
+					Thread.currentThread().interrupt();
+					throw new RuntimeException("Error while buffering data", e);
+				}
+			}
+		}).start();
 
-        // Block until the buffer has data
-        while (buffer.isEmpty()) {
-            try {
-                Thread.sleep(100); // Sleep for a short interval to avoid busy-waiting
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                throw new RuntimeException("Error while waiting for data", e);
-            }
-        }
+		// Block until the buffer has data
+		while (buffer.isEmpty()) {
+			try {
+				Thread.sleep(100); // Sleep for a short interval to avoid busy-waiting
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+				throw new RuntimeException("Error while waiting for data", e);
+			}
+		}
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public T next() {
-        return buffer.poll(); // Retrieve and remove the head of the buffer
-    }
+	@Override
+	public T next() {
+		return buffer.poll(); // Retrieve and remove the head of the buffer
+	}
 }
 
