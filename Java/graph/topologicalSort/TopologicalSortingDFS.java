@@ -1,4 +1,4 @@
-package graph;
+package graph.topologicalSort;
 
 // A Java program to print topological sorting of a DAG
 
