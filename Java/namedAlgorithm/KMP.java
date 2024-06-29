@@ -1,3 +1,5 @@
+package namedAlgorithm;
+
 // https://www.youtube.com/watch?v=BXCEFAzhxGY&ab_channel=BackToBackSWE
 // https://www.youtube.com/watch?v=V5-7GzOfADQ&ab_channel=AbdulBari
 // https://leetcode.com/problems/number-of-subarrays-that-match-a-pattern-ii/
@@ -40,7 +42,7 @@ public class KMP {
 		// The longest prefix which is also the suffix
 		createLPSTable(pattern);
 
-		// Applying the KMP algorithm
+		// Applying the namedAlgorithm.KMP algorithm
 		int i = 0; // index for txt[]
 		int j = 0;
 		while (i < N) {
