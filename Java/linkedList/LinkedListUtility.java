@@ -1,4 +1,4 @@
-package linkedlist;
+package linkedList;
 
 public class LinkedListUtility {
 	public static void printSinglyLinkedList(ListNode head) {
