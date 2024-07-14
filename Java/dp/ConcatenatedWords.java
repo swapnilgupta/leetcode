@@ -10,15 +10,18 @@ import java.util.Set;
 
 public class ConcatenatedWords {
 	/**
-	 words =
-	 ["cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat"]
-	 3      4.        10.       3.       10.             14         3.      12
-
-	 catsdogcats -> cats dog cat
-	 dogcatsdog -> dog cat dog
-	 ratcatdogcat -> rat cat dog cat
-
-
+	 * This class is designed to find all concatenated words in a dictionary. A concatenated word is defined as a string that is comprised entirely of at least two shorter words in the dictionary.
+	 <p>
+	 * Example:
+	 * Given the words in the dictionary as follows:
+	 * ["cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"]
+	 <p>
+	 * The following words are concatenated:
+	 * - "catsdogcats" can be formed by concatenating "cats", "dog", and "cats"
+	 * - "dogcatsdog" can be formed by concatenating "dog", "cats", and "dog"
+	 * - "ratcatdogcat" can be formed by concatenating "rat", "cat", "dog", and "cat"
+	 <p>
+	 * These words are identified by checking every possible prefix of a word to see if it exists in the dictionary and recursively checking the remainder of the word.
 	 */
 		private final Map<String, Boolean> isOk = new HashMap<>();
 		private boolean isConcatenatedWord(String w, Set<String> ws) {
