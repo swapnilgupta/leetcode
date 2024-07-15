@@ -37,7 +37,7 @@ public class ReaderWriter {
 		for (int i = 0; i < 5; i++) {
 			new Thread(() -> {
 				int value = sharedResource.readData();
-				System.out.println("Reader Thread " + Thread.currentThread().threadId() + " read: " + value);
+				System.out.println("Reader Thread " + Thread.currentThread().getId() + " read: " + value);
 			}).start();
 		}
 
@@ -46,7 +46,7 @@ public class ReaderWriter {
 			final int newValue = i + 1;
 			new Thread(() -> {
 				sharedResource.writeData(newValue);
-				System.out.println("Writer Thread " + Thread.currentThread().threadId() + " wrote: " + newValue);
+				System.out.println("Writer Thread " + Thread.currentThread().getId() + " wrote: " + newValue);
 			}).start();
 		}
 	}

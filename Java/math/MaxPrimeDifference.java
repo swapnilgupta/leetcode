@@ -30,7 +30,7 @@ public class MaxPrimeDifference {
 		}
 		// find the maximum prime difference between indices
 
-		return primes.getLast() - primes.getFirst();
+		return primes.get(primes.size() - 1) - primes.get(0);
 	}
 
 	// nums = [4,2,9,5,3] output: 3
