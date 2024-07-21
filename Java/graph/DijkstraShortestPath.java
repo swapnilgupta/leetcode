@@ -6,6 +6,9 @@ import java.util.PriorityQueue;
 
 public class DijkstraShortestPath {
 
+	/**
+	 * Create the adjacency list node add a way to compare as well
+  	*/
 	public static class AdjListNode implements Comparable<AdjListNode> {
 
 		int v, weight;
@@ -19,11 +22,9 @@ public class DijkstraShortestPath {
 		public int compareTo(AdjListNode o) {
 			return this.weight - o.weight; // min heap by weight (ascending order)
 		}
-
 	}
 
 	public static class Graph {
-
 		int V;
 		List<List<AdjListNode>> adj;
 
@@ -108,6 +109,4 @@ public class DijkstraShortestPath {
 		}
 
 	}
-
-
 }
