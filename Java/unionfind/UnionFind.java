@@ -45,7 +45,7 @@ class UnionFindPathCompression {
 
 	public int find(int u) {
 		if (parent[u] != u) {
-			u = find(parent[u]);
+			parent[u] = find(parent[u]);
 		}
 		return parent[u];
 	}

@@ -11,7 +11,7 @@ public class Trie {
 	static class TrieNode {
 
 		TrieNode[] children;
-		boolean isEndOfWord;
+		boolean isEndOfWord; // Integer isEndOfWord is used to mark the end of the word
 
 		public TrieNode() {
 			children = new TrieNode[ALPHABET_SIZE];
