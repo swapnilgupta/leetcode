@@ -13,14 +13,22 @@ public class SnakesAndLadder {
 		for (int move = 0; !queue.isEmpty(); move++) {
 			for (int size = queue.size(); size > 0; size--) {
 				int num = queue.poll();
-				if (visited[num]) continue;
+				if (visited[num]) {
+					continue;
+				}
 				visited[num] = true;
-				if (num == n * n) return move;
+				if (num == n * n) {
+					return move;
+				}
 				for (int i = 1; i <= 6 && num + i <= n * n; i++) {
 					int next = num + i;
 					int value = getBoardValue(board, next);
-					if (value > 0) next = value;
-					if (!visited[next]) queue.offer(next);
+					if (value > 0) {
+						next = value;
+					}
+					if (!visited[next]) {
+						queue.offer(next);
+					}
 				}
 			}
 		}
@@ -39,15 +47,16 @@ public class SnakesAndLadder {
 
 
 	public static class Main {
+
 		public static void main(String[] args) {
 			//Initialize a snake and ladders game board
 			int[][] board = new int[][]{
-					{-1, -1, -1, -1, -1, -1},
-					{-1, -1, -1, -1, -1, -1},
-					{-1, -1, -1, -1, -1, -1},
-					{-1, 35, -1, -1, 13, -1},
-					{-1, -1, -1, -1, -1, -1},
-					{-1, 15, -1, -1, -1, -1}
+				{-1, -1, -1, -1, -1, -1},
+				{-1, -1, -1, -1, -1, -1},
+				{-1, -1, -1, -1, -1, -1},
+				{-1, 35, -1, -1, 13, -1},
+				{-1, -1, -1, -1, -1, -1},
+				{-1, 15, -1, -1, -1, -1}
 			};
 
 			SnakesAndLadder game = new SnakesAndLadder();

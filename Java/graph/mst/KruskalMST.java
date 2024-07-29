@@ -98,7 +98,8 @@ public class KruskalMST {
 		System.out.println("Following are the edges of the constructed MST: ");
 		int minCost = 0;
 		for (int i = 0; i < noOfEdges; ++i) {
-			System.out.println(results[i].src + " -- " + results[i].dest + " == " + results[i].weight);
+			System.out.println(
+				results[i].src + " -- " + results[i].dest + " == " + results[i].weight);
 			minCost += results[i].weight;
 		}
 		System.out.println("Total cost of the MST: " + minCost);
@@ -108,9 +109,9 @@ public class KruskalMST {
 	public static void main(String[] args) {
 		int V = 4;
 		List<Edge> graphEdges = new ArrayList<>(
-				List.of(new Edge(0, 1, 10), new Edge(0, 2, 6),
-						new Edge(0, 3, 5), new Edge(1, 3, 15),
-						new Edge(2, 3, 4)));
+			List.of(new Edge(0, 1, 10), new Edge(0, 2, 6),
+				new Edge(0, 3, 5), new Edge(1, 3, 15),
+				new Edge(2, 3, 4)));
 
 		// Sort the edges in non-decreasing order
 		// (increasing with repetition allowed)

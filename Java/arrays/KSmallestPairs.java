@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class KSmallestPairs {
+
 	public List<List<Integer>> kSmallestPairs(int[] nums1, int[] nums2, int k) {
 		List<List<Integer>> ans = new ArrayList<>();
 		int m = nums1.length, n = nums2.length;

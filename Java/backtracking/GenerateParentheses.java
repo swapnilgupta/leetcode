@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerateParentheses {
+
 	private void backtrack(int n, int open, int close, StringBuilder curr, List<String> vp) {
 		if (curr.length() == 2 * n) {
 			vp.add(curr.toString());

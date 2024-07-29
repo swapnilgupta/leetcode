@@ -1,6 +1,12 @@
 package greedy;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ShoppingOptimization {
 
@@ -11,13 +17,15 @@ public class ShoppingOptimization {
 		stores.put("Store C", new HashSet<>(Arrays.asList("Item 1", "Item 3", "Item 4")));
 		stores.put("Store D", new HashSet<>(Arrays.asList("Item 4", "Item 5")));
 
-		Set<String> requiredItems = new HashSet<>(Arrays.asList("Item 1", "Item 2", "Item 3", "Item 4"));
+		Set<String> requiredItems = new HashSet<>(
+			Arrays.asList("Item 1", "Item 2", "Item 3", "Item 4"));
 
 		List<String> result = findMinimumStores(stores, requiredItems);
 		System.out.println("Visit the following stores: " + result);
 	}
 
-	public static List<String> findMinimumStores(Map<String, Set<String>> stores, Set<String> requiredItems) {
+	public static List<String> findMinimumStores(Map<String, Set<String>> stores,
+		Set<String> requiredItems) {
 		List<String> selectedStores = new ArrayList<>();
 		Set<String> itemsCovered = new HashSet<>();
 

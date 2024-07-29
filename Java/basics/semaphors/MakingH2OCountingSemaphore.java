@@ -4,6 +4,7 @@ package basics.semaphors;
 import java.util.concurrent.Semaphore;
 
 public class MakingH2OCountingSemaphore {
+
 	private final Semaphore hydrogenSemaphore;
 	private final Semaphore oxygenSemaphore;
 

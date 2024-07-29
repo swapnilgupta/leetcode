@@ -1,20 +1,26 @@
 package graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
 
 public class MinTimeVisitDisappearingNodes {
+
 	public int[] minimumTime(int n, int[][] edges, int[] disappear) {
 		Map<String, Integer> edgeWeights = new HashMap<>();
 		List<List<int[]>> adj = new ArrayList<>();
 		for (int i = 0; i < n; ++i) {
 			adj.add(new ArrayList<>());
 		}
-		for(int[] edge : edges) {
+		for (int[] edge : edges) {
 			int u = edge[0];
 			int v = edge[1];
 			int weight = edge[2];
 			// ignore loops
-			if(u != v) {
+			if (u != v) {
 				String edgeStr = u < v ? u + "-" + v : v + "-" + u;
 				// If the edge is not present in the map or the current weight is less than the existing weight
 				if (!edgeWeights.containsKey(edgeStr) || weight < edgeWeights.get(edgeStr)) {

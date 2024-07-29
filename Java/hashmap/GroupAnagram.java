@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class GroupAnagram {
+
 	public List<List<String>> groupAnagrams(String[] wordList) {
 		// sort each string and put it in a hashmap
 		HashMap<String, List<String>> map = new HashMap<>(); // sorted string -> list of strings

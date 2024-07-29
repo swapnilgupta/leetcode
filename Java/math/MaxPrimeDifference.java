@@ -1,5 +1,9 @@
 package math;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MaxPrimeDifference {
 
 	public int maximumPrimeDifference(int[] nums) {
@@ -25,7 +29,7 @@ public class MaxPrimeDifference {
 				primes.add(i);
 			}
 		}
-		if(primes.size() < 2) {
+		if (primes.size() < 2) {
 			return 0;
 		}
 		// find the maximum prime difference between indices
@@ -36,7 +40,7 @@ public class MaxPrimeDifference {
 	// nums = [4,2,9,5,3] output: 3
 	public static void main(String[] args) {
 		MaxPrimeDifference mpd = new MaxPrimeDifference();
-		int[] nums = { 1, 7 };
+		int[] nums = {1, 7};
 		System.out.println(mpd.maximumPrimeDifference(nums));
 	}
 

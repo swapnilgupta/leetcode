@@ -30,10 +30,12 @@ class PriorityQueueDemo {
 }
 
 class Solution {
+
 	public int getNumWidth(int num) {
 		int w = 0;
-		if (num == 0)
+		if (num == 0) {
 			return 1;
+		}
 		if (num < 0) {
 			++w;
 			num = -num;

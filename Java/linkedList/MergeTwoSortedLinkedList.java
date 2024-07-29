@@ -1,6 +1,7 @@
 package linkedList;
 
 public class MergeTwoSortedLinkedList {
+
 	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 		// PreHead node
 		ListNode preHead = new ListNode(-1);

@@ -7,6 +7,7 @@ import java.util.TreeSet;
 
 
 public class SummaryRanges {
+
 	private Set<Integer> values;
 
 	public SummaryRanges() {
@@ -78,10 +79,7 @@ public class SummaryRanges {
 	}
 }
 
-
 /**
- * Your arrays.SummaryRanges object will be instantiated and called as such:
- * arrays.SummaryRanges obj = new arrays.SummaryRanges();
- * obj.addNum(value);
- * int[][] param_2 = obj.getIntervals();
+ * Your arrays.SummaryRanges object will be instantiated and called as such: arrays.SummaryRanges
+ * obj = new arrays.SummaryRanges(); obj.addNum(value); int[][] param_2 = obj.getIntervals();
  */

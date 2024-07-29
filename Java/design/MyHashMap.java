@@ -1,6 +1,7 @@
 package design;
 
 class ListNode {
+
 	int key, val;
 	ListNode next;
 
@@ -12,11 +13,8 @@ class ListNode {
 }
 
 /**
- * Your MyHashMap object will be instantiated and called as such:
- * MyHashMap obj = new MyHashMap();
- * obj.put(key,value);
- * int param_2 = obj.get(key);
- * obj.remove(key);
+ * Your MyHashMap object will be instantiated and called as such: MyHashMap obj = new MyHashMap();
+ * obj.put(key,value); int param_2 = obj.get(key); obj.remove(key);
  */
 class MyHashMap {
 	// https://leetcode.com/problems/design-hashmap/solutions/1097755/js-python-java-c-updated-hash-array-solutions-w-explanation/
@@ -55,8 +53,12 @@ class MyHashMap {
 	public void remove(int key) {
 		int h = hash(key);
 		ListNode node = data[h];
-		if (node == null) return;
-		if (node.key == key) data[h] = node.next;
+		if (node == null) {
+			return;
+		}
+		if (node.key == key) {
+			data[h] = node.next;
+		}
 		while (node.next != null) {
 			if (node.next.key == key) {
 				node.next = node.next.next;

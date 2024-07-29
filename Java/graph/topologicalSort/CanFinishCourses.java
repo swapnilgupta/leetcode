@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Queue;
 
 public class CanFinishCourses {
+
 	public boolean canFinish(int n, int[][] pre) {
 		// Kahn's Algorithm | Topological Sort
 		Map<Integer, List<Integer>> adj = new HashMap<>(); // adjacency list
@@ -50,7 +51,7 @@ public class CanFinishCourses {
 		CanFinishCourses cfc = new CanFinishCourses();
 		System.out.println(cfc.canFinish(n, pre)); // true
 
-		pre = new int[][] {{1, 0}, {0, 1}};
+		pre = new int[][]{{1, 0}, {0, 1}};
 		System.out.println(cfc.canFinish(n, pre)); // false
 	}
 }

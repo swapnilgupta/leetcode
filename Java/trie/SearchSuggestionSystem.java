@@ -1,10 +1,9 @@
 package trie;
 
-import trie.Trie.TrieNode;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import trie.Trie.TrieNode;
 
 public class SearchSuggestionSystem {
 

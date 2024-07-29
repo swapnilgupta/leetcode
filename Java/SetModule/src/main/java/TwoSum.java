@@ -1,6 +1,17 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 class TwoSum {
+
 	TwoSum() {
 
 	}
@@ -52,15 +63,16 @@ class TwoSum {
 }
 
 class BestTeamScore {
+
 	public HashMap<Integer, Integer> sortByValue(HashMap<Integer, Integer> hm) {
 		// Create a list from elements of HashMap
 		List<Map.Entry<Integer, Integer>> list =
-				new LinkedList<Map.Entry<Integer, Integer>>(hm.entrySet());
+			new LinkedList<Map.Entry<Integer, Integer>>(hm.entrySet());
 
 		// Sort the list
 		Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
 			public int compare(Map.Entry<Integer, Integer> o1,
-							   Map.Entry<Integer, Integer> o2) {
+				Map.Entry<Integer, Integer> o2) {
 				return (o1.getValue()).compareTo(o2.getValue());
 			}
 		});
@@ -96,7 +108,9 @@ class BestTeamScore {
 
 
 class Main1 {
+
 	class Interval {
+
 		int start, end;
 
 		Interval(int start, int end) {
@@ -131,12 +145,12 @@ class Main1 {
 	public HashMap<Interval, Integer> sortByValue(HashMap<Interval, Integer> hm) {
 		// Create a list from elements of HashMap
 		List<Map.Entry<Interval, Integer>> list =
-				new LinkedList<Map.Entry<Interval, Integer>>(hm.entrySet());
+			new LinkedList<Map.Entry<Interval, Integer>>(hm.entrySet());
 
 		// Sort the list
 		Collections.sort(list, new Comparator<Map.Entry<Interval, Integer>>() {
 			public int compare(Map.Entry<Interval, Integer> o1,
-							   Map.Entry<Interval, Integer> o2) {
+				Map.Entry<Interval, Integer> o2) {
 				return (o1.getValue()).compareTo(o2.getValue());
 			}
 		});
@@ -149,7 +163,6 @@ class Main1 {
 		return temp;
 //    }
 
-
 	}
 
 	public int numJewelsInStones(String jewels, String stones) {
@@ -161,8 +174,9 @@ class Main1 {
 		}
 		int res = 0;
 		for (char s : sc) {
-			if (jMap.containsKey(s))
+			if (jMap.containsKey(s)) {
 				++res;
+			}
 		}
 		return res;
 	}

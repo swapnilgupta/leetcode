@@ -1,14 +1,20 @@
 package graph;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Queue;
+import java.util.Set;
 
 public class IsReachablePoint {
+
 	// Eight possible movements
 	private static final int[] dx = {-1, -1, -1, 0, 1, 1, 1, 0};
 	private static final int[] dy = {-1, 0, 1, 1, 1, 0, -1, -1};
 
 	// Using HashSet to check if a cell has been visited
 	private static class Point {
+
 		int x, y;
 
 		Point(int x, int y) {
@@ -18,11 +24,15 @@ public class IsReachablePoint {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o) return true;
-			if (o == null || getClass() != o.getClass()) return false;
+			if (this == o) {
+				return true;
+			}
+			if (o == null || getClass() != o.getClass()) {
+				return false;
+			}
 			Point point = (Point) o;
 			return x == point.x &&
-					y == point.y;
+				y == point.y;
 		}
 
 		@Override
@@ -33,7 +43,9 @@ public class IsReachablePoint {
 
 	public boolean isReachableAtTime(int sx, int sy, int fx, int fy, int t) {
 		// Using LinkedList to implement BFS (queue)
-		if (Math.abs(sx - fx) + Math.abs(sy - fy) != t) return false;
+		if (Math.abs(sx - fx) + Math.abs(sy - fy) != t) {
+			return false;
+		}
 		Queue<int[]> queue = new LinkedList<>();
 		queue.offer(new int[]{sx, sy, 0}); // add start point
 
@@ -55,7 +67,9 @@ public class IsReachablePoint {
 			for (int i = 0; i < 8; i++) {
 				int newX = curX + dx[i];
 				int newY = curY + dy[i];
-				if (newX < 1 || newY < 1) continue;
+				if (newX < 1 || newY < 1) {
+					continue;
+				}
 				Point newPoint = new Point(newX, newY);
 
 				// If this cell has not been visited and time does not exceed t

@@ -17,14 +17,17 @@ public class ClashRoyals {
 			while (sum + trophies <= n) {
 				sum += trophies; // Add to the sum
 				// If sum still less than n, perform bitwise and operation
-				if (sum + trophies <= n)
+				if (sum + trophies <= n) {
 					bitwise_and &= trophies;
+				}
 				trophies++; // Increase trophies
 			}
-			if (sum == n && bitwise_and == 0)
-				result[i] = trophies - 1; // If sum reaches 'n' and bitwise AND is 0, store the starting trophies
-			else
+			if (sum == n && bitwise_and == 0) {
+				result[i] = trophies
+					- 1; // If sum reaches 'n' and bitwise AND is 0, store the starting trophies
+			} else {
 				result[i] = -1; // If conditions are not met, return -1
+			}
 		}
 		return result;
 	}

@@ -1,8 +1,13 @@
 package hashmap;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class PalindromicArray {
+
 	private static final Map<List<String>, Boolean> memo = new HashMap<>();
 
 	public static boolean isPalindrome(String[] arr) {
@@ -19,9 +24,9 @@ public class PalindromicArray {
 		}
 		if (words.size() == 2) {
 			return words.get(0).equals(words.get(1)) ||
-					words.get(0).substring(0, words.get(0).length() - 1)
-							.equals(words.get(0).substring(words.get(0).length() - 1) + words.get(1)) ||
-					(words.get(0) + words.get(1).substring(0, 1)).equals(words.get(1).substring(1));
+				words.get(0).substring(0, words.get(0).length() - 1)
+					.equals(words.get(0).substring(words.get(0).length() - 1) + words.get(1)) ||
+				(words.get(0) + words.get(1).substring(0, 1)).equals(words.get(1).substring(1));
 
 		}
 		boolean result = false;

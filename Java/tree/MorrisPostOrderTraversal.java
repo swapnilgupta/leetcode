@@ -28,7 +28,7 @@ public class MorrisPostOrderTraversal {
 		while (current != null) {
 			if (current.right == null) {
 				postOrder.add(
-						current.val); // left nothing to process, so this is the inorder node to print
+					current.val); // left nothing to process, so this is the inorder node to print
 				current = current.left;
 			} else {
 				TreeNode pre = current.right; // Predecessor

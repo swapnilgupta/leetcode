@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class IsBipartite {
+
 	public boolean isBipartite(int[][] graph) {
 		int n = graph.length;
 		int[] color = new int[n];
@@ -13,7 +14,9 @@ public class IsBipartite {
 		int[] visited = new int[n];
 
 		for (int i = 0; i < n; ++i) {
-			if (visited[i] == 1) continue;
+			if (visited[i] == 1) {
+				continue;
+			}
 			color[i] = 1;
 			visited[i] = 1;
 			q.add(i);
@@ -23,7 +26,9 @@ public class IsBipartite {
 				int nc = color[cur] == 1 ? 0 : 1;
 				for (var node : graph[cur]) {
 					if (color[node] != -1) {
-						if (color[node] == color[cur]) return false;
+						if (color[node] == color[cur]) {
+							return false;
+						}
 					} else {
 						color[node] = nc;
 						q.offer(node);

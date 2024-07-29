@@ -3,6 +3,7 @@ package stack;
 import java.util.Stack;
 
 public class Asteroid {
+
 	public int[] asteroidCollision(int[] A) {
 		Stack<Integer> st = new Stack<>();
 		int n = A.length;

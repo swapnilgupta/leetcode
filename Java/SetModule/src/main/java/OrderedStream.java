@@ -1,6 +1,11 @@
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 class OrderedStream {
+
 	protected Map<Integer, String> hashMap;
 
 	public OrderedStream(int n) {
@@ -20,9 +25,10 @@ class OrderedStream {
 	}
 
 	public int uniqueMorseRepresentations(String[] words) {
-		String[] morseDict = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..",
-				".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
-				"..-", "...-", ".--", "-..-", "-.--", "--.."};
+		String[] morseDict = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
+			"..",
+			".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-",
+			"..-", "...-", ".--", "-..-", "-.--", "--.."};
 		int res = 0;
 		Set<String> transformations = new HashSet<>();
 		for (int i = 0; i < words.length; ++i) {
@@ -41,20 +47,25 @@ class OrderedStream {
 	}
 
 	class Solution {
+
 		public int uniqueMorseRepresentations(String[] words) {
-			String[] arr = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..",
-					"--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
+			String[] arr = new String[]{".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....",
+				"..", ".---", "-.-", ".-..",
+				"--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-",
+				"-.--", "--.."};
 
 			HashSet<String> set = new HashSet<>();
-			for (String word : words)
+			for (String word : words) {
 				set.add(transformMorse(word, arr));
+			}
 			return set.size();
 		}
 
 		private String transformMorse(String word, String[] arr) {
 			StringBuilder build = new StringBuilder();
-			for (char c : word.toCharArray())
+			for (char c : word.toCharArray()) {
 				build.append(arr[(int) c - 97]);
+			}
 			return build.toString();
 		}
 	}

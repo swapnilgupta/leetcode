@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Node {
+
 	int val;
 	Node left, right;
 
@@ -14,6 +15,7 @@ class Node {
 }
 
 class BinaryTree {
+
 	// Root of Binary Tree
 	Node root;
 
@@ -23,7 +25,9 @@ class BinaryTree {
 
 	/* Given a binary tree, print its nodes in inorder */
 	void printInorder(Node node) {
-		if (node == null) return;
+		if (node == null) {
+			return;
+		}
 
 		/* first recur on left child */
 		printInorder(node.left);
@@ -42,7 +46,9 @@ class BinaryTree {
 
 	/* Given a binary tree, print its nodes in post-order */
 	void printPostorder(Node node) {
-		if (node == null) return;
+		if (node == null) {
+			return;
+		}
 
 		// recur for a left
 		printPostorder(node.left);
@@ -62,7 +68,9 @@ class BinaryTree {
 	write a func to print nodes of a tree in preorder fashion
 	 */
 	void printPreorder(Node node) {
-		if (node == null) return;
+		if (node == null) {
+			return;
+		}
 		System.out.print(node.val + " ");
 		printPreorder(node.left);
 		printPreorder(node.right);
@@ -78,7 +86,9 @@ class BinaryTree {
 	using an array for implementing queue
 	*/
 	void printLevelOrder() {
-		if (root == null) return;
+		if (root == null) {
+			return;
+		}
 		Queue<Node> queue = new LinkedList<>();
 		queue.add(root);
 
@@ -86,10 +96,12 @@ class BinaryTree {
 			int sz = queue.size();
 			for (int i = 0; i < sz; ++i) {
 				Node temp = queue.poll();
-				if (temp.left != null)
+				if (temp.left != null) {
 					queue.add(temp.left);
-				if (temp.right != null)
+				}
+				if (temp.right != null) {
 					queue.add(temp.right);
+				}
 
 				System.out.print(temp.val + " ");
 			}
@@ -99,6 +111,7 @@ class BinaryTree {
 }
 
 public class TreeTraversals {
+
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
 		tree.root = new Node(1);

@@ -1,9 +1,8 @@
 package tree;
 
-import tree.nodeTypes.TreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
+import tree.nodeTypes.TreeNode;
 
 class Symmetric {
 
@@ -69,7 +68,6 @@ class Symmetric {
 				q2.add(n2.left);
 			}
 		}
-
 
 		return true;
 	}

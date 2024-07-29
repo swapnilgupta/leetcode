@@ -6,14 +6,18 @@ import java.util.Map;
 import java.util.Set;
 
 public class AllOOne {
+
 }
 
 
 class AllOne {
+
 	public static class NodeDLL {
+
 		NodeDLL prev, next;
 		Set<String> keys = new HashSet<>();
 		int count;
+
 		NodeDLL(String key, int count) {
 			this.keys.add(key);
 			this.count = count;
@@ -31,6 +35,7 @@ class AllOne {
 			this.next.prev = this.prev;
 		}
 	}
+
 	Map<String, NodeDLL> m = new HashMap<>(); // key -> DLL Node
 	private final NodeDLL head = new NodeDLL("", -1);
 	private final NodeDLL tail = new NodeDLL("", -1); // senital nodes
@@ -61,7 +66,9 @@ class AllOne {
 	}
 
 	public void dec(String key) {
-		if (!m.containsKey(key)) return;
+		if (!m.containsKey(key)) {
+			return;
+		}
 
 		NodeDLL nodeDLL = m.get(key);
 		nodeDLL.keys.remove(key);
@@ -98,10 +105,6 @@ class AllOne {
 }
 
 /**
- * Your AllOne object will be instantiated and called as such:
- * AllOne obj = new AllOne();
- * obj.inc(key);
- * obj.dec(key);
- * String param_3 = obj.getMaxKey();
- * String param_4 = obj.getMinKey();
+ * Your AllOne object will be instantiated and called as such: AllOne obj = new AllOne();
+ * obj.inc(key); obj.dec(key); String param_3 = obj.getMaxKey(); String param_4 = obj.getMinKey();
  */

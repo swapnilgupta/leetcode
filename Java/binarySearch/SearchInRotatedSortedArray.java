@@ -1,11 +1,13 @@
 package binarySearch;
 
 public class SearchInRotatedSortedArray {
+
 	public int search(int[] nums, int target) {
 		int lo = 0, hi = nums.length - 1;
 		while (lo < hi) {
 			int mid = lo + (hi - lo) / 2;
-			if (nums[mid] > nums[hi]) { //if mid element is greater than hi, it means the rotation is on right half.
+			if (nums[mid]
+				> nums[hi]) { //if mid element is greater than hi, it means the rotation is on right half.
 				lo = mid + 1;
 			} else { //rotation is on left half
 				hi = mid;

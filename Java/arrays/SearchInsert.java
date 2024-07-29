@@ -1,6 +1,7 @@
 package arrays;
 
 public class SearchInsert {
+
 	public int searchInsert(int[] nums, int target) {
 		int n = nums.length;
 		int i = 0, j = n - 1;

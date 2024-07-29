@@ -6,11 +6,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class NAryTreeSerialization {
+
 	final static int N = 5; // 5 - Ary Tree
 	final static int MARKER = ')';
 
 	// A Node a N-Ary Tree
 	static class Node {
+
 		char key;
 		Node[] child; // Array of pointers for N children
 

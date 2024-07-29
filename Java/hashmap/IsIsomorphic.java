@@ -3,6 +3,7 @@ package hashmap;
 import java.util.Arrays;
 
 public class IsIsomorphic {
+
 	public boolean isIsomorphic(String s, String t) {
 		int n = s.length();
 		int[] mappingSToT = new int[256];

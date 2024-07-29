@@ -24,7 +24,8 @@ public class MaxSubarraySumCircular {
 			minSum = Math.min(minSum, curMin);  // updating the global min
 			total += nums[i]; // calculating the total sum
 		}
-		if (maxSum > 0) { // if the maxSum is greater than 0, then we can return the max of the two cases
+		if (maxSum
+			> 0) { // if the maxSum is greater than 0, then we can return the max of the two cases
 			return Math.max(maxSum, total - minSum); // returning the max of the two cases
 		}
 		return maxSum;

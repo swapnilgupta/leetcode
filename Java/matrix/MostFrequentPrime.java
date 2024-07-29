@@ -9,18 +9,22 @@ public class MostFrequentPrime {
 	public static void main(String[] args) {
 		MostFrequentPrime mfp = new MostFrequentPrime();
 		int[][] mat = {
-				{1, 1},
-				{9, 9},
-				{1, 1}
+			{1, 1},
+			{9, 9},
+			{1, 1}
 		};
 		System.out.println(mfp.mostFrequentPrime(mat));
 	}
 
 	boolean isPrime(int n) {
-		if (n <= 1) return false;
+		if (n <= 1) {
+			return false;
+		}
 		int sqrtN = (int) Math.sqrt(n);
 		for (int i = 2; i <= sqrtN; ++i) {
-			if (n % i == 0) return false;
+			if (n % i == 0) {
+				return false;
+			}
 		}
 		return true;
 	}

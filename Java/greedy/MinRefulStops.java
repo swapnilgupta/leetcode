@@ -1,6 +1,7 @@
 package greedy;
 
 public class MinRefulStops {
+
 	public int minRefuelStops(int target, int startFuel, int[][] stations) {
 		int ans = -1;
 		int currPos = startFuel;

@@ -1,9 +1,12 @@
 package mathematics;
 
 public class IsNumberPalindrome {
+
 	public boolean isPalindrome(int x) {
 		int y = 0, z = x;
-		if (x < 0) return false;
+		if (x < 0) {
+			return false;
+		}
 		while (x > 0) {
 			int rem = x % 10;
 			x /= 10;

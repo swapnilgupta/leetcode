@@ -3,6 +3,7 @@ package graph.topologicalSort;
 import java.util.ArrayList;
 
 public class TopologicalSortBFS {
+
 	static class Graph {
 
 		private final int V; // No. of vertices
@@ -43,7 +44,7 @@ public class TopologicalSortBFS {
 		g.addEdge(3, 1);
 
 		System.out.println("Following is a Topological "
-				+ "sort of the given graph");
+			+ "sort of the given graph");
 		// Function Call
 		g.topologicalSort();
 	}

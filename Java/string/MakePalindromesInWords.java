@@ -3,6 +3,7 @@ package string;
 import java.util.Arrays;
 
 public class MakePalindromesInWords {
+
 	public static void main(String[] args) {
 		MakePalindromesInWords mp = new MakePalindromesInWords();
 		String[] words = {"abbb", "ba", "aa"};

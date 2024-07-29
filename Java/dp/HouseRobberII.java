@@ -1,6 +1,7 @@
 package dp;
 
 public class HouseRobberII {
+
 	// circular street
 	private int rob(int[] nums, int i, int j) {
 		int[] dp = new int[j - i + 1];
@@ -11,6 +12,7 @@ public class HouseRobberII {
 		}
 		return dp[j - i];
 	}
+
 	public int rob(int[] nums) {
 		int n = nums.length;
 		if (n == 1) {

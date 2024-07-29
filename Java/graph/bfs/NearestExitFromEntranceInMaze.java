@@ -4,7 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class NearestExitFromEntranceInMaze {
+
 	static class Pair {
+
 		int x;
 		int y;
 
@@ -32,7 +34,8 @@ public class NearestExitFromEntranceInMaze {
 				for (int[] d : dir) {
 					int x = curr.x + d[0];
 					int y = curr.y + d[1];
-					if (x > 0 && y > 0 && x < m - 1 && y < n - 1 && maze[x][y] == '.' && !visited[x][y]) {
+					if (x > 0 && y > 0 && x < m - 1 && y < n - 1 && maze[x][y] == '.'
+						&& !visited[x][y]) {
 						visited[x][y] = true;
 						q.add(new Pair(x, y));
 					} else {
@@ -52,9 +55,9 @@ public class NearestExitFromEntranceInMaze {
 		NearestExitFromEntranceInMaze mazeObj = new NearestExitFromEntranceInMaze();
 
 		char[][] maze = {
-				{'+', '+', '.', '+'},
-				{'.', '.', '.', '+'},
-				{'+', '+', '+', '.'}
+			{'+', '+', '.', '+'},
+			{'.', '.', '.', '+'},
+			{'+', '+', '+', '.'}
 		};
 		int[] entrance = {1, 2};
 
@@ -63,7 +66,8 @@ public class NearestExitFromEntranceInMaze {
 		if (result == -1) {
 			System.out.println("There is no exit from the entrance in the maze.");
 		} else {
-			System.out.println("The nearest exit from the entrance in the maze is at " + result + " steps.");
+			System.out.println(
+				"The nearest exit from the entrance in the maze is at " + result + " steps.");
 		}
 	}
 

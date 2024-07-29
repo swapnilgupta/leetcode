@@ -1,6 +1,7 @@
 package slidingWindow;
 
 public class MinimumSizeSubArraySum {
+
 	public static int minSubArrayLen(int target, int[] nums) {
 		int n = nums.length, i = 0, j = 0, cs = 0, ans = Integer.MAX_VALUE;
 		while (i < n && j < n) {

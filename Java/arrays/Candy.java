@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Candy {
+
 	public int candy(int[] ratings) {
 		// sort by ratings
 		int ans = 0;
@@ -20,14 +21,14 @@ public class Candy {
 
 		// Sorted Map in ascending order
 		Map<Integer, Integer> sorted = map.entrySet()
-				.stream()
-				.sorted(Map.Entry.comparingByValue())
-				.collect(Collectors.toMap(
-						Map.Entry::getKey,
-						Map.Entry::getValue,
-						(e1, e2) -> e2,
-						LinkedHashMap::new
-				));
+			.stream()
+			.sorted(Map.Entry.comparingByValue())
+			.collect(Collectors.toMap(
+				Map.Entry::getKey,
+				Map.Entry::getValue,
+				(e1, e2) -> e2,
+				LinkedHashMap::new
+			));
 
 		for (Map.Entry<Integer, Integer> entry : sorted.entrySet()) {
 			int idx = entry.getKey();
@@ -55,8 +56,9 @@ public class Candy {
 			candies[idx] = Math.max(c1, c2);
 		}
 
-		for (int c : candies)
+		for (int c : candies) {
 			ans += c;
+		}
 
 		return ans;
 	}

@@ -6,7 +6,7 @@ import java.util.List;
 public class CombinationSum {
 
 	public void backtrack(int[] can, int tar, int sum, List<List<Integer>> res,
-						  List<Integer> cur, int start) {
+		List<Integer> cur, int start) {
 		if (sum == tar) {
 			res.add(new ArrayList<>(cur));
 			return;

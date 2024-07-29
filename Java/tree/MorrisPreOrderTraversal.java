@@ -32,7 +32,7 @@ public class MorrisPreOrderTraversal {
 		while (current != null) {
 			if (current.left == null) {
 				System.out.print(current.val
-						+ " "); // left nothing to process, so this is the inorder node to print
+					+ " "); // left nothing to process, so this is the inorder node to print
 				current = current.right;
 			} else {
 				TreeNode pre = current.left; // Predecessor
@@ -44,7 +44,7 @@ public class MorrisPreOrderTraversal {
 					pre.right = current;
 					// before going to the left, print the current node as it's preorder
 					System.out.print(current.val
-							+ " "); // make current as right child of its inorder predecessor
+						+ " "); // make current as right child of its inorder predecessor
 					current = current.left; // go to left subtree
 				} else {
 					pre.right = null;

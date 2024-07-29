@@ -9,6 +9,7 @@ enum Result {
 }
 
 public class RegularExpressionMatching {
+
 	Result[][] memo;
 
 	public boolean isMatch(String text, String pattern) {
@@ -33,15 +34,15 @@ public class RegularExpressionMatching {
 		} else {
 			// Either pattern is at '.' or both text[i] == pattern[j]
 			boolean firstMatch = (i < text.length() &&
-					(text.charAt(i) == pattern.charAt(j) ||
-							pattern.charAt(j) == '.'));
+				(text.charAt(i) == pattern.charAt(j) ||
+					pattern.charAt(j) == '.'));
 
 			// If Kleen's '*' is the 2nd character - pattern
 			// Case 1 - [char]* - is NULL
 			// Case 2 - [char]* - any occurrence of [char]
 			if (j + 1 < pattern.length() && pattern.charAt(j + 1) == '*') {
 				ans = helper(i, j + 2, text, pattern, memo) || // NULL - Case - 1
-						firstMatch && helper(i + 1, j, text, pattern, memo); // 1 - Match case
+					firstMatch && helper(i + 1, j, text, pattern, memo); // 1 - Match case
 			} else {
 				// If 2nd Char is NOT Kleen's * then only case is to match the first char
 				// Advances both i and j as it's case of match

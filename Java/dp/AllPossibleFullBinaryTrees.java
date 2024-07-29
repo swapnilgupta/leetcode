@@ -1,14 +1,16 @@
 package dp;
 
-import tree.nodeTypes.TreeNode;
-
 import java.util.ArrayList;
 import java.util.List;
+import tree.nodeTypes.TreeNode;
 
 public class AllPossibleFullBinaryTrees {
+
 	public List<TreeNode> allPossibleFBT(int n) {
 		List<TreeNode> ans = new ArrayList<>();
-		if (n % 2 == 0) return ans;
+		if (n % 2 == 0) {
+			return ans;
+		}
 		TreeNode node = new TreeNode(0);
 		createPossibleFBT(n, node, ans);
 		return ans;

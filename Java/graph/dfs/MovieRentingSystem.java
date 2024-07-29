@@ -1,11 +1,18 @@
 package graph.dfs;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 class MovieRentingSystem {
+
 	public static class Pair<I extends Number, I1 extends Number> {
+
 		Integer shop, movie;
 
 		public Pair(int shop, int movie) {
@@ -13,6 +20,7 @@ class MovieRentingSystem {
 			this.movie = movie;
 		}
 	}
+
 	Comparator<Entry> comparator = (o1, o2) -> {
 		if (o1.price != o2.price) {
 			return Integer.compare(o1.price, o2.price);
@@ -47,7 +55,7 @@ class MovieRentingSystem {
 		// Map each entry to its shop
 		Stream<Integer> shopStream = limitedStream.map(e -> e.shop);
 
-         // Collect the shops into a list
+		// Collect the shops into a list
 		List<Integer> shopList = shopStream.collect(Collectors.toList());
 
 		return shopList;

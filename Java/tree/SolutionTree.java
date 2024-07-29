@@ -6,7 +6,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class SolutionTree {
+
 	public class TreeNode {
+
 		int val;
 		TreeNode left;
 		TreeNode right;
@@ -27,19 +29,24 @@ public class SolutionTree {
 
 	void printLevelOrder(TreeNode root) {
 
-
 	}
 
 	public void setParent(HashMap<TreeNode, TreeNode> parent, TreeNode root) {
-		if (root == null) return;
-		if (root.left != null)
+		if (root == null) {
+			return;
+		}
+		if (root.left != null) {
 			parent.putIfAbsent(root.left, root);
-		if (root.right != null)
+		}
+		if (root.right != null) {
 			parent.putIfAbsent(root.right, root);
+		}
 	}
 
 	public TreeNode replaceValueInTree(TreeNode root) {
-		if (root == null) return null;
+		if (root == null) {
+			return null;
+		}
 		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(root);
 		int level = 0;
@@ -69,26 +76,29 @@ public class SolutionTree {
 			levelSum.add(ls);
 		}
 		Queue<TreeNode> q = new LinkedList<>();
-		if (root != null)
+		if (root != null) {
 			q.add(root);
+		}
 
 		while (!q.isEmpty()) {
 			int sz = q.size();
 			for (int i = 0; i < sz; ++i) {
 				TreeNode temp = q.poll();
-				if (parent.get(temp) == null)
+				if (parent.get(temp) == null) {
 					temp.val = 0;
-				else {
+				} else {
 					temp.val = levelSum.get(level) - childSum.get(parent.get(temp));
 					System.out.print("level: " + level);
 					System.out.print(" parent: " + parent.get(temp));
 					System.out.println(" childsum: " + childSum.get(parent.get(temp)));
 					System.out.println();
 				}
-				if (temp.left != null)
+				if (temp.left != null) {
 					q.add(temp.left);
-				if (temp.right != null)
+				}
+				if (temp.right != null) {
 					q.add(temp.right);
+				}
 			}
 			++level;
 		}
@@ -96,20 +106,26 @@ public class SolutionTree {
 	}
 
 	boolean _isSymmetric(TreeNode left, TreeNode right) {
-		if (left != null && right == null)
+		if (left != null && right == null) {
 			return false;
-		if (right != null && left == null)
+		}
+		if (right != null && left == null) {
 			return false;
-		if (left == null && right == null)
+		}
+		if (left == null && right == null) {
 			return true;
-		if (left.val != right.val)
+		}
+		if (left.val != right.val) {
 			return false;
-		else
+		} else {
 			return _isSymmetric(left.left, right.right) && _isSymmetric(left.right, right.left);
+		}
 	}
 
 	boolean isSymmetric(TreeNode root) {
-		if (root == null) return true;
+		if (root == null) {
+			return true;
+		}
 
 		return _isSymmetric(root.left, root.right);
 	}
@@ -117,7 +133,9 @@ public class SolutionTree {
 
 	public int deepestLeavesSum(TreeNode root) {
 		// handling edge case
-		if (root == null) return 0;
+		if (root == null) {
+			return 0;
+		}
 		// tracking each level sum in 'ans'
 		int sum = 0;
 		// creating a queue for doing level order traversal
@@ -133,9 +151,13 @@ public class SolutionTree {
 				assert temp != null;
 				sum += temp.val;
 				// Add left child if present
-				if (temp.left != null) q.add(temp.left);
+				if (temp.left != null) {
+					q.add(temp.left);
+				}
 				// Add right child if present
-				if (temp.right != null) q.add(temp.right);
+				if (temp.right != null) {
+					q.add(temp.right);
+				}
 			}
 		}
 		return sum;
@@ -159,9 +181,10 @@ public class SolutionTree {
 
 	int lcs(int i, int j, String A, String B) {
 		// Base cond.
-		if (i == A.length() && j == B.length())
+		if (i == A.length() && j == B.length()) {
 			return 0;
-			// main logic - possibilities all
+		}
+		// main logic - possibilities all
 		else if (A.charAt(i) == B.charAt(j)) {
 			return 1 + lcs(i + 1, j + 1, A, B);
 		} else {
@@ -178,7 +201,9 @@ public class SolutionTree {
 		for (int i = 0; i < n; ++i) {
 			if (words[i] == pat[j]) {
 				j++;
-				if (j == 3) j = 0;
+				if (j == 3) {
+					j = 0;
+				}
 			} else {
 				ans += (3 - j - 1);
 				j = 0;

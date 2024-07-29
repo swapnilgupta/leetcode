@@ -42,7 +42,7 @@ public class SpecialPermutation {
 			// or nums[prevIdx] is divisible by nums[j]
 			// or nums[j] is divisible by nums[prevIdx]
 			if (prevIdx == -1 || nums[prevIdx] % nums[j] == 0
-					|| nums[j] % nums[prevIdx] == 0) {
+				|| nums[j] % nums[prevIdx] == 0) {
 				// add the result of recursively choosing this element and moving to the next index
 				tot += solve(nums, j, curIdx + 1, mask | (1 << j));
 				// modulo by 10^9 + 7 to avoid overflow

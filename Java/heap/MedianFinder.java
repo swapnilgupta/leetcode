@@ -1,6 +1,10 @@
 package heap;
-import java.util.*;
+
+import java.util.Collections;
+import java.util.PriorityQueue;
+
 class MedianFinder {
+
 	private final PriorityQueue<Integer> lo = new PriorityQueue<>(Collections.reverseOrder());
 	private final PriorityQueue<Integer> hi = new PriorityQueue<>();
 
@@ -13,13 +17,15 @@ class MedianFinder {
 
 		hi.add(lo.poll());
 
-		if(lo.size() < hi.size()) {
+		if (lo.size() < hi.size()) {
 			lo.add(hi.poll());
 		}
 	}
 
 	public double findMedian() {
-		if(lo.size() > hi.size()) return lo.peek();
+		if (lo.size() > hi.size()) {
+			return lo.peek();
+		}
 
 		return (lo.peek() + hi.peek()) / 2.0;
 	}

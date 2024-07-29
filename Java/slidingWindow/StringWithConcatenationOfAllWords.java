@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class StringWithConcatenationOfAllWords {
+
 	public long maxSum(List<Integer> nums, int m, int k) {
 		int n = nums.size();
 		Map<Integer, Integer> hm = new HashMap<>();

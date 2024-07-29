@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MarkIndicesI {
+
 	// nums[2,2,0] and changeIndices[2,2,2,2,3,2,,2,1]
 	public static void main(String[] args) {
 		MarkIndicesI mi = new MarkIndicesI();
@@ -26,8 +27,11 @@ public class MarkIndicesI {
 			// if it sis last time we visited this index, we must mark this index
 			// so, we check weather this idx already reduced to zero, if not then return false
 			if (i == last.get(changeIndices[i])) {
-				if (cnt < nums[changeIndices[i] - 1]) return false;
-				else cnt -= nums[changeIndices[i] - 1];
+				if (cnt < nums[changeIndices[i] - 1]) {
+					return false;
+				} else {
+					cnt -= nums[changeIndices[i] - 1];
+				}
 			} else {
 				++cnt;
 			}

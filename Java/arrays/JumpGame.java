@@ -28,7 +28,6 @@ public class JumpGame {
 	// driver code for above
 	public static void main(String[] args) {
 
-
 		// Call the method and print the result
 		int[] nums = {2, 3, 1, 1, 4};
 		System.out.println("Can Jump: " + canJump(nums));

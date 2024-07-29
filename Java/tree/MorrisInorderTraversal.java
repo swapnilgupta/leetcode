@@ -23,7 +23,7 @@ public class MorrisInorderTraversal {
 		while (current != null) {
 			if (current.left == null) {
 				System.out.print(current.val
-						+ " "); // left nothing to process, so this is the inorder node to print
+					+ " "); // left nothing to process, so this is the inorder node to print
 				current = current.right;
 			} else {
 				TreeNode pre = current.left; // Predecessor
@@ -37,7 +37,7 @@ public class MorrisInorderTraversal {
 				} else {
 					pre.right = null;
 					System.out.print(current.val
-							+ " "); // the left subtree is done, so this is the inorder node to print
+						+ " "); // the left subtree is done, so this is the inorder node to print
 					current = current.right;
 				}
 			}

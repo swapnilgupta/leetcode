@@ -3,6 +3,7 @@ package math;
 import java.util.PriorityQueue;
 
 public class MinOperationsThreshold {
+
 	public static void main(String[] args) {
 		MinOperationsThreshold mot = new MinOperationsThreshold();
 		/**

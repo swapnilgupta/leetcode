@@ -5,7 +5,8 @@ import java.util.List;
 
 public class PermutationSequence {
 
-	public static void backtrack(int n, int k, List<Integer> nums, List<Integer> curr, List<List<Integer>> res, int pos) {
+	public static void backtrack(int n, int k, List<Integer> nums, List<Integer> curr,
+		List<List<Integer>> res, int pos) {
 		if (curr.size() == n) {
 			res.add(new ArrayList<>(curr));
 			return;

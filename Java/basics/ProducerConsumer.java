@@ -5,6 +5,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 class Producer implements Runnable {
+
 	private final BlockingQueue<String> queue;
 
 	public Producer(BlockingQueue<String> queue) {
@@ -27,6 +28,7 @@ class Producer implements Runnable {
 }
 
 class Consumer implements Runnable {
+
 	private final BlockingQueue<String> queue;
 
 	public Consumer(BlockingQueue<String> queue) {
@@ -47,6 +49,7 @@ class Consumer implements Runnable {
 }
 
 public class ProducerConsumer {
+
 	public static void main(String[] args) {
 		BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 

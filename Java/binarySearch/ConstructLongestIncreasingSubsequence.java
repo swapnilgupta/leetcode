@@ -7,6 +7,7 @@ import java.util.List;
 
 
 public class ConstructLongestIncreasingSubsequence {
+
 	class Pair {
 
 		int num;

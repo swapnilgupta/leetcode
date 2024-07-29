@@ -1,6 +1,7 @@
 package matrix;
 
 public class GameOfLife {
+
 	public void gameOfLife(int[][] board) {
 		int m = board.length;
 		int n = board[0].length;

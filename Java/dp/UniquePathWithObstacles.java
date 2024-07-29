@@ -1,6 +1,7 @@
 package dp;
 
 public class UniquePathWithObstacles {
+
 	public int uniquePathsWithObstacles(int[][] board) {
 		int m = board.length, n = board[0].length;
 		// int[][] dp = new int[m][n];
@@ -39,9 +40,9 @@ public class UniquePathWithObstacles {
 	public static void main(String[] args) {
 		UniquePathWithObstacles uniquePathWithObstacles = new UniquePathWithObstacles();
 		int[][] board = {
-				{0, 0, 0},
-				{0, 1, 0},
-				{0, 0, 0}
+			{0, 0, 0},
+			{0, 1, 0},
+			{0, 0, 0}
 		};
 		System.out.println(uniquePathWithObstacles.uniquePathsWithObstacles(board));  // prints 2
 	}

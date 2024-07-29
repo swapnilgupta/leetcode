@@ -47,25 +47,25 @@ public class PartitionArrayIntoTwoArraysToMinimizeSumDiff {
 		}
 
 		// from no elements in arr that's i = 0 to all `n` elements in arr that's i <= n
-		for(int i = 0; i <= n; ++i) {
-			if(mp1.containsKey(i)) {
+		for (int i = 0; i <= n; ++i) {
+			if (mp1.containsKey(i)) {
 				Collections.sort(mp1.get(i));
 			}
 
-			if(mp2.containsKey(i)) {
+			if (mp2.containsKey(i)) {
 				Collections.sort(mp2.get(i));
 			}
 		}
 
-		for(int i = 0; i <= n; ++i) {
+		for (int i = 0; i <= n; ++i) {
 			// a - size of left half
 			// b - size of right half
 			int a = 0, b = mp2.get(n - i).size() - 1;
-			while(a < mp1.get(i).size() && b >= 0) {
+			while (a < mp1.get(i).size() && b >= 0) {
 				int sum = mp1.get(i).get(a) + mp2.get(n - i).get(b);
 				int curDiff = Math.abs(total - 2 * sum);
 				diff = Math.min(diff, curDiff);
-				if(total / 2 > sum) {
+				if (total / 2 > sum) {
 					++a;
 				} else {
 					--b;
@@ -81,10 +81,10 @@ public class PartitionArrayIntoTwoArraysToMinimizeSumDiff {
 		int[] arr = {3, 9, 7, 3};
 		System.out.println(obj.minimumDifference(arr));
 
-		arr = new int[] {-36, 36};
+		arr = new int[]{-36, 36};
 		System.out.println(obj.minimumDifference(arr));
 
-		arr = new int[] {2, -1, 0, 4, -2, -9};
+		arr = new int[]{2, -1, 0, 4, -2, -9};
 		System.out.println(obj.minimumDifference(arr));
 	}
 

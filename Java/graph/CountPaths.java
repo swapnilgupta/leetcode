@@ -5,11 +5,13 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CountPaths {
+
 	private long mul(long a, long b) {
 		return (a * b);
 	}
 
 	private class Pair {
+
 		int first;
 		int second;
 
@@ -49,7 +51,9 @@ public class CountPaths {
 	private Pair dfs(int x, int f, List<List<Integer>> adj, boolean[] prime, long[] r) {
 		Pair v = new Pair(!prime[x] ? 1 : 0, prime[x] ? 1 : 0);
 		for (int y : adj.get(x)) {
-			if (y == f) continue;
+			if (y == f) {
+				continue;
+			}
 			Pair p = dfs(y, x, adj, prime, r);
 			r[0] += mul(p.first, v.second) + mul(p.second, v.first);
 			if (prime[x]) {

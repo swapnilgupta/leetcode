@@ -7,6 +7,7 @@ public class ReachDestination {
 
 
 	static class Node implements Comparable<Node> {
+
 		int row;
 		int col;
 		int dist;  // cost to reach this node
@@ -53,7 +54,9 @@ public class ReachDestination {
 
 		while (!pq.isEmpty()) {
 			Node node = pq.poll();
-			if (visited[node.row][node.col]) continue;
+			if (visited[node.row][node.col]) {
+				continue;
+			}
 			visited[node.row][node.col] = true;
 
 			for (int d = 0; d < 4; ++d) {
@@ -73,7 +76,9 @@ public class ReachDestination {
 	public static void main(String[] args) {
 		visited = new boolean[n][m];
 		distance = new int[n][m];
-		for (int[] row : distance) Arrays.fill(row, Integer.MAX_VALUE);
+		for (int[] row : distance) {
+			Arrays.fill(row, Integer.MAX_VALUE);
+		}
 		dijkstra();
 		System.out.println(distance[dx][dy]);
 	}

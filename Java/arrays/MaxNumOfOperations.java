@@ -9,14 +9,17 @@ public class MaxNumOfOperations {
 	 * Given an array of integers called nums, you can perform any of the following operation while
 	 * nums contains at least 2 elements:
 	 *
-	 * <p>Choose the first two elements of nums and delete them. Choose the last two elements of nums
+	 * <p>Choose the first two elements of nums and delete them. Choose the last two elements of
+	 * nums
 	 * and delete them. Choose the first and the last elements of nums and delete them. The score of
 	 * the operation is the sum of the deleted elements.
 	 *
-	 * <p>Your task is to find the maximum number of operations that can be performed, such that all
+	 * <p>Your task is to find the maximum number of operations that can be performed, such that
+	 * all
 	 * operations have the same score.
 	 *
-	 * <p>Return the maximum number of operations possible that satisfy the condition mentioned above.
+	 * <p>Return the maximum number of operations possible that satisfy the condition mentioned
+	 * above.
 	 *
 	 * @param nums
 	 * @return
@@ -43,9 +46,9 @@ public class MaxNumOfOperations {
 
 		// based on above sum we can find the maximum number of operations using recursion
 		return 1
-				+ Math.max(
-				recur(nums, s1, 1, nums.length - 2),
-				Math.max(recur(nums, s2, 2, nums.length - 1), recur(nums, s3, 0, nums.length - 3)));
+			+ Math.max(
+			recur(nums, s1, 1, nums.length - 2),
+			Math.max(recur(nums, s2, 2, nums.length - 1), recur(nums, s3, 0, nums.length - 3)));
 	}
 
 	public int recur(int[] nums, int sum, int i, int j) {

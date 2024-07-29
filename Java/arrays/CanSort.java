@@ -1,6 +1,7 @@
 package arrays;
 
 public class CanSort {
+
 	public boolean canSortArray(int[] nums) {
 		// Count the set bits for each element
 		int[] bitCount = new int[nums.length];

@@ -24,7 +24,7 @@ public class MaxPointsOnLine {
 		HashMap<Double, int[]> lines = new HashMap<>(len - j + 1, .95f);
 		for (; j < len; j++) {
 			Double slope = points[j][1] == y ? 0.0
-					: points[j][0] == x ? Double.POSITIVE_INFINITY
+				: points[j][0] == x ? Double.POSITIVE_INFINITY
 					: (double) (points[j][1] - y) / (points[j][0] - x);
 			//System.out.format("%d %d %f\n", i, j, slope);
 			int[] count = lines.get(slope);
@@ -39,9 +39,12 @@ public class MaxPointsOnLine {
 
 
 	public static class IsNumberPalindrome {
+
 		public boolean isPalindrome(int x) {
 			int y = 0, z = x;
-			if (x < 0) return false;
+			if (x < 0) {
+				return false;
+			}
 			while (x > 0) {
 				int rem = x % 10;
 				x /= 10;

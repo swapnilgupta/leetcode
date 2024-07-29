@@ -1,6 +1,7 @@
 package unionfind;
 
 class UnionFind {
+
 	private final int[] parent;
 
 	public UnionFind(int n) {
@@ -34,6 +35,7 @@ class UnionFind {
 }
 
 class UnionFindPathCompression {
+
 	private final int[] parent;
 
 	UnionFindPathCompression(int n) {
@@ -79,22 +81,26 @@ class UnionFindPathCompression {
 }
 
 /**
- * This class implements the Union-Find data structure using the Rank and Path Compression techniques.
+ * This class implements the Union-Find data structure using the Rank and Path Compression
+ * techniques.
  * </br>
- * The Union-Find data structure provides an efficient way to keep track of a partition of a set into disjoint subsets.
- * It is commonly used to solve problems with disjoint sets, such as implementing disjoint-set forests or finding
- * connected components in a graph.
+ * The Union-Find data structure provides an efficient way to keep track of a partition of a set
+ * into disjoint subsets. It is commonly used to solve problems with disjoint sets, such as
+ * implementing disjoint-set forests or finding connected components in a graph.
  * </br>
- * The Rank technique is used to optimize the performance of the Union operation by merging smaller trees into larger
- * trees. This helps to keep the overall height of the trees relatively small, which leads to better performance.
+ * The Rank technique is used to optimize the performance of the Union operation by merging smaller
+ * trees into larger trees. This helps to keep the overall height of the trees relatively small,
+ * which leads to better performance.
  * </br>
- * The Path Compression technique is used to optimize the performance of the Find operation by compressing the path
- * from a node to its root. This helps to flatten the tree, reducing future traversals and improving overall performance.
+ * The Path Compression technique is used to optimize the performance of the Find operation by
+ * compressing the path from a node to its root. This helps to flatten the tree, reducing future
+ * traversals and improving overall performance.
  * </br>
- * The class provides methods to perform the Find and Union operations on elements, as well as initializing the data
- * structure with a specific number of elements.
+ * The class provides methods to perform the Find and Union operations on elements, as well as
+ * initializing the data structure with a specific number of elements.
  */
 class UnionFindByRankAndPathCompression {
+
 	private final int[] parent;
 	private final int[] rank;
 

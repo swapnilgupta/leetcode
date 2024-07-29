@@ -1,6 +1,11 @@
 package graph;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 
 public class EvaluateDivision {
@@ -16,10 +21,10 @@ public class EvaluateDivision {
 
 		// test with example mentioned in the code comment
 		List<List<String>> equations = Arrays.asList(Arrays.asList("a", "b"),
-				Arrays.asList("b", "c"));
+			Arrays.asList("b", "c"));
 		double[] values = {2.0, 3.0};
 		List<List<String>> queries = Arrays.asList(Arrays.asList("a", "c"), Arrays.asList("b", "a"),
-				Arrays.asList("a", "e"), Arrays.asList("a", "a"), Arrays.asList("x", "x"));
+			Arrays.asList("a", "e"), Arrays.asList("a", "a"), Arrays.asList("x", "x"));
 
 		double[] result = ed.calcEquation(equations, values, queries);
 
@@ -28,7 +33,7 @@ public class EvaluateDivision {
 	}
 
 	public double[] calcEquation(List<List<String>> equations, double[] values,
-								 List<List<String>> queries) {
+		List<List<String>> queries) {
 		Map<String, Map<String, Double>> graph = new HashMap<>();
 		int n = values.length;
 
@@ -60,7 +65,7 @@ public class EvaluateDivision {
 	}
 
 	private double divide(String a, String c, Set<String> seen,
-						  Map<String, Map<String, Double>> graph) {
+		Map<String, Map<String, Double>> graph) {
 		if (a.equals(c)) {
 			return 1.0;
 		}

@@ -1,6 +1,7 @@
 package math;
 
 public class LargestSquareArea {
+
 	// bottomLeft = [[1,1],[2,2],[3,1]], topRight = [[3,3],[4,4],[6,6]]
 	public static void main(String[] args) {
 		LargestSquareArea lsa = new LargestSquareArea();
@@ -34,7 +35,8 @@ public class LargestSquareArea {
 		int n = bottomLeft.length;
 		Rectangle[] rectangles = new Rectangle[n];
 		for (int i = 0; i < n; i++) {
-			rectangles[i] = new Rectangle(bottomLeft[i][0], bottomLeft[i][1], topRight[i][0], topRight[i][1]);
+			rectangles[i] = new Rectangle(bottomLeft[i][0], bottomLeft[i][1], topRight[i][0],
+				topRight[i][1]);
 		}
 		long maxArea = 0;
 		for (int i = 0; i < n; i++) {
@@ -49,6 +51,7 @@ public class LargestSquareArea {
 	}
 
 	static class Rectangle {
+
 		int bottomLeftX;
 		int bottomLeftY;
 		int topRightX;

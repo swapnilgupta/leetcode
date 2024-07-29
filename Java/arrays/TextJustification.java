@@ -51,7 +51,8 @@ public class TextJustification {
 	// driver code for text justification
 	public static void main(String[] args) {
 		TextJustification tj = new TextJustification();
-		String[] words = {"Science", "is", "what", "we", "understand", "well", "enough", "to", "explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"};
+		String[] words = {"Science", "is", "what", "we", "understand", "well", "enough", "to",
+			"explain", "to", "a", "computer.", "Art", "is", "everything", "else", "we", "do"};
 		int maxWidth = 20;
 		List<String> ans = tj.fullJustify(words, maxWidth);
 		for (String line : ans) {

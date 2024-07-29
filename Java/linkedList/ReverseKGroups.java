@@ -4,7 +4,8 @@ public class ReverseKGroups {
 
 	public ListNode reverseKGroup(ListNode head, int k) {
 		ListNode begin;
-		if (head == null || head.next == null || k == 1) { // if k == 1, no need to reverse or there is only one node
+		if (head == null || head.next == null
+			|| k == 1) { // if k == 1, no need to reverse or there is only one node
 			return head;
 		}
 		ListNode dummyNode = new ListNode(-1);
@@ -24,7 +25,8 @@ public class ReverseKGroups {
 
 	}
 
-	public ListNode reverse(ListNode begin, ListNode end) { // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
+	public ListNode reverse(ListNode begin,
+		ListNode end) { // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 		ListNode start = begin.next;
 		ListNode pre = begin;
 		ListNode then = start.next;

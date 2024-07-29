@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MaximizeTheGoldHouseOffers {
+
 	public int maximizeTheProfit(int n, List<List<Integer>> offers) {
 		int[] dp = new int[n + 1];
 		// Offers ending at certain point

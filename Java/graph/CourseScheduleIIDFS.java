@@ -1,11 +1,18 @@
 package graph;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.BitSet;
+import java.util.Deque;
+import java.util.List;
 
 public class CourseScheduleIIDFS {
+
 	private void initializeGraph(int[] in, List<List<Integer>> adj, int[][] pre) {
 		int n = in.length;
-		while (n-- > 0) adj.add(new ArrayList<>());
+		while (n-- > 0) {
+			adj.add(new ArrayList<>());
+		}
 		for (int[] edge : pre) {
 			++in[edge[0]];
 			adj.get(edge[1]).add(edge[0]);
@@ -30,7 +37,8 @@ public class CourseScheduleIIDFS {
 		return orderArray;
 	}
 
-	private boolean hasOrderDFS(int from, List<List<Integer>> adj, BitSet visited, BitSet onStack, Deque<Integer> order) {
+	private boolean hasOrderDFS(int from, List<List<Integer>> adj, BitSet visited, BitSet onStack,
+		Deque<Integer> order) {
 		visited.set(from);
 		onStack.set(from);
 		for (int to : adj.get(from)) {

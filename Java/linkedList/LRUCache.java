@@ -88,6 +88,7 @@ class LRUCache {
 }
 
 class Main {
+
 	public static void main(String[] args) {
 		LRUCache lruCache = new LRUCache(2);
 

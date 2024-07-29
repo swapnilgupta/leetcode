@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class UniqueEmails {
+
 	public int numUniqueEmails(String[] emails) {
 		// Hash Set to store all the unique emails
 		Set<String> uniqueEmails = new HashSet<>();
@@ -29,14 +30,15 @@ public class UniqueEmails {
 	// write the driver code for the above function
 
 	/**
-	 * Input: emails = ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
-	 * Output: 2
-	 * Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails.
+	 * Input: emails =
+	 * ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
+	 * Output: 2 Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually
+	 * receive mails.
 	 */
 	public static void main(String[] args) {
 		UniqueEmails ue = new UniqueEmails();
 		String[] emails = {"test.email+alex@leetcode.com", "test.e.mail+bob.cathy@leetcode.com",
-				"testemail+david@lee.tcode.com"};
+			"testemail+david@lee.tcode.com"};
 
 		System.out.println(ue.numUniqueEmails(emails));
 	}

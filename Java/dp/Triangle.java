@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Triangle {
+
 	public int getMin(int i, int j) {
 		return i > j ? j : i;
 	}

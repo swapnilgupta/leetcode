@@ -11,13 +11,15 @@ public class FloydWarshall {
 
 	// A function to print the solution matrix
 	void printSolution(int[][] dist) {
-		System.out.println("The following matrix shows the shortest distances between every pair of vertices:");
+		System.out.println(
+			"The following matrix shows the shortest distances between every pair of vertices:");
 		for (int i = 0; i < V; i++) {
 			for (int j = 0; j < V; j++) {
-				if (dist[i][j] == INF)
+				if (dist[i][j] == INF) {
 					System.out.print("INF ");
-				else
+				} else {
 					System.out.print(dist[i][j] + " ");
+				}
 			}
 			System.out.println();
 		}
@@ -30,8 +32,9 @@ public class FloydWarshall {
         /* Initialize the solution matrix same as input graph matrix.
         Or we can say the initial values of shortest distances
         are based on shortest paths considering no intermediate vertex. */
-		for (int i = 0; i < V; i++)
+		for (int i = 0; i < V; i++) {
 			System.arraycopy(graph[i], 0, dist[i], 0, V);
+		}
 
         /* Add all vertices one by one to the set of intermediate vertices.
         ---> Before the start of an iteration, we have the shortest distances between all
@@ -46,8 +49,10 @@ public class FloydWarshall {
 				for (int j = 0; j < V; j++) {
 					// If vertex k is on the shortest path from i to j,
 					// then update the value of dist[i][j]
-					if (dist[i][k] != INF && dist[k][j] != INF && dist[i][k] + dist[k][j] < dist[i][j])
+					if (dist[i][k] != INF && dist[k][j] != INF
+						&& dist[i][k] + dist[k][j] < dist[i][j]) {
 						dist[i][j] = dist[i][k] + dist[k][j];
+					}
 				}
 			}
 		}

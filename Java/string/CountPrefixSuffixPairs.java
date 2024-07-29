@@ -1,6 +1,7 @@
 package string;
 
 public class CountPrefixSuffixPairs {
+
 	private boolean isPrefixAndSuffix(String st1, String st2) {
 		int n = st1.length();
 		int m = st2.length();

@@ -78,7 +78,7 @@ class TopologicalSortingDFS {
 		g.addEdge(3, 1);
 
 		System.out.println("Following is a Topological "
-				+ "sort of the given graph");
+			+ "sort of the given graph");
 		// Function Call
 		g.topologicalSort();
 	}

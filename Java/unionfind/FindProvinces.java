@@ -4,7 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class FindProvinces {
+
 	class UnionFind {
+
 		public int[] parent;
 
 		UnionFind(int n) {
@@ -52,9 +54,9 @@ public class FindProvinces {
 	// driver code for the above function
 	public static void main(String[] args) {
 		int[][] isConnected = {{1, 0, 0, 1},
-				{0, 1, 1, 0},
-				{0, 1, 1, 1},
-				{1, 0, 1, 1}};
+			{0, 1, 1, 0},
+			{0, 1, 1, 1},
+			{1, 0, 1, 1}};
 
 		FindProvinces solution = new FindProvinces();
 		int provinces = solution.findCircleNum(isConnected);

@@ -90,7 +90,7 @@ public class Trie {
 	public static void main(String[] args) {
 		// Input keys (use only 'a' through 'z' and lower case)
 		String[] keys = {"the", "a", "there", "answer", "any",
-				"by", "bye", "their"};
+			"by", "bye", "their"};
 
 		String[] output = {"Not present in trie", "Present in trie"};
 

@@ -3,11 +3,11 @@ package arrays;
 public class CountMatchingSubArrays {
 
 	/**
-	 * A subarray nums[i..j] of size m + 1 is said to match the pattern if the following conditions hold for each element pattern[k]:
+	 * A subarray nums[i..j] of size m + 1 is said to match the pattern if the following conditions
+	 * hold for each element pattern[k]:
 	 * <p>
-	 * nums[i + k + 1] > nums[i + k] if pattern[k] == 1.
-	 * nums[i + k + 1] == nums[i + k] if pattern[k] == 0.
-	 * nums[i + k + 1] < nums[i + k] if pattern[k] == -1.
+	 * nums[i + k + 1] > nums[i + k] if pattern[k] == 1. nums[i + k + 1] == nums[i + k] if
+	 * pattern[k] == 0. nums[i + k + 1] < nums[i + k] if pattern[k] == -1.
 	 *
 	 * @param nums
 	 * @param pattern
