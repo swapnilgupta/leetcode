@@ -1,21 +1,11 @@
 package tree.nodeTypes;
 
 public class TreeNode {
-
 	public int val;
-	public TreeNode left;
-	public TreeNode right;
+	public TreeNode left, right, random;
 
-	TreeNode() {
-	}
-
-	public TreeNode(int val) {
-		this.val = val;
-	}
-
-	TreeNode(int val, TreeNode left, TreeNode right) {
-		this.val = val;
-		this.left = left;
-		this.right = right;
+	public TreeNode(int value) {
+		val = value;
+		left = right = random = null;
 	}
 }
