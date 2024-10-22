@@ -1,6 +1,8 @@
 package math;
 
 public class MinimumDivisionOperationsToMakeArrayInc {
+	int sieveSize = 1000000;  // Using direct integer value
+	int[] sieve = new int[sieveSize + 1];
 	// Function to compute the smallest prime factor (SPF) using Sieve of Eratosthenes
 	public void computeSPF(int[] sieve) {
 		int n = sieve.length - 1;
@@ -20,9 +22,9 @@ public class MinimumDivisionOperationsToMakeArrayInc {
 	}
 
 	// Function to get the greatest proper divisor of x
-	int greatestProperDivisor(int x, int[] sieve) {
+	int greatestProperDivisor(int x) {
 		if (x == 1) return 1;  // If x is 1, return 1 because 1 is not a prime number and sieve[0] = 0
-		return x / sieve[x];  // Return the greatest proper divisor using SPF
+		return x / sieve[x];  // Return the greatest proper divisor using SPF(smallest prime factor)
 	}
 
 	public int minOperations(int[] nums) {
@@ -30,16 +32,14 @@ public class MinimumDivisionOperationsToMakeArrayInc {
 		if (n <= 1) return 0;  // Handle an edge case for empty or single-element arrays
 
 		int operations = 0;
-		int sieveSize = 1000000;  // Using direct integer value
-		int[] sieve = new int[sieveSize + 1];
-		computeSPF(sieve);  // Compute the sieve
+
 
 		// Traverse from right to left (i.e., from second last element to first)
 		// because if once decreased, we ensure that we don't have to decrease it again
 		for (int i = n - 2; i >= 0; i--) {
 			// If the current element is greater than or equal to the next element
 			while (nums[i] > nums[i + 1]) {
-				int gpd = greatestProperDivisor(nums[i], sieve);
+				int gpd = greatestProperDivisor(nums[i]);
 				if (gpd == 1) {
 					return -1;  // If GPD is 1, and we can't reduce further, return -1
 				}
@@ -57,6 +57,12 @@ public class MinimumDivisionOperationsToMakeArrayInc {
 
 	public static void main(String[] args) {
 		MinimumDivisionOperationsToMakeArrayInc obj = new MinimumDivisionOperationsToMakeArrayInc();
+		obj.computeSPF(obj.sieve);
+		// some examples to understand the gpd
+		int[] exampleNums = new int[]{25, 26, 9};
+		for(int exampleNum : exampleNums) {
+			System.out.println("Greatest proper divisor of " + exampleNum + " is " + obj.greatestProperDivisor(exampleNum) + " Smallest Prime Factor: " + obj.sieve[exampleNum]);
+		}
 		int[] nums = {25, 7};
 		System.out.println(obj.minOperations(nums)); // 1
 		nums = new int[]{7,7,6};
